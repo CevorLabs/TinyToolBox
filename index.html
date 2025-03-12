@@ -5,89 +5,172 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TinyToolbox - The Ultimate Python Utility Pack</title>
   <style>
+    /* General Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #fff;
+      overflow-x: hidden;
     }
+
+    /* Header */
     header {
       background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
+      padding: 60px 20px;
       text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     header p {
       margin: 10px 0 0;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      color: #ddd;
     }
+
+    /* Container */
     .container {
       max-width: 1200px;
-      margin: 20px auto;
+      margin: 40px auto;
       padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      animation: slideUp 1s ease-in-out;
     }
+
+    /* Features Grid */
     .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
     }
+
     .feature {
       background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 15px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
+
     .feature:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
+
     .feature h2 {
       margin: 0 0 10px;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ff7e5f;
     }
+
     .feature p {
       margin: 0;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      color: #ddd;
     }
+
+    /* Buttons */
     .buttons {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 60px;
     }
+
     .buttons a {
       display: inline-block;
       margin: 10px;
-      padding: 15px 30px;
+      padding: 15px 40px;
       font-size: 1.2rem;
       color: #fff;
-      background: #007bff;
-      border-radius: 5px;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b);
+      border-radius: 50px;
       text-decoration: none;
-      transition: background 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
     }
+
     .buttons a:hover {
-      background: #0056b3;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 126, 95, 0.6);
     }
+
+    /* Footer */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 40px 20px;
       background: rgba(0, 0, 0, 0.7);
-      margin-top: 40px;
+      margin-top: 60px;
+      animation: fadeIn 1.5s ease-in-out;
     }
+
+    footer p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
     footer a {
-      color: #007bff;
+      color: #ff7e5f;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
+
     footer a:hover {
-      text-decoration: underline;
+      color: #feb47b;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      .feature h2 {
+        font-size: 1.5rem;
+      }
+      .feature p {
+        font-size: 1rem;
+      }
+      .buttons a {
+        font-size: 1rem;
+        padding: 12px 30px;
+      }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -123,11 +206,11 @@
     </div>
     <div class="buttons">
       <a href="tinytoolbox.zip" download>Download TinyToolbox</a>
-      <a href="https://github.com/CevorExec/Cevor" target="_blank">Visit GitHub</a>
+      <a href="https://github.com/CevorLabs/TinyToolBox" target="_blank">Visit GitHub</a>
     </div>
   </div>
   <footer>
-    <p>Created by <a href="https://github.com/CevorExec" target="_blank">CevorExec</a></p>
+    <p>Created by <a href="https://github.com/CevorLabs" target="_blank">CevorLabs</a></p>
   </footer>
 </body>
 </html>
