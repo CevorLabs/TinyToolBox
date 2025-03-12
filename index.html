@@ -171,9 +171,6 @@
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- JSZip Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
 <body>
   <header>
@@ -209,51 +206,12 @@
     </div>
     <div class="buttons">
       <a href="https://github.com/CevorLabs/TinyToolBox/releases" target="_blank">Download</a>
-      <a href="#" id="download-open-source">Download Open Source</a>
+      <a href="https://cevorlabs.github.io/TinyToolBox/download-opensource.html" target="_blank">Download Open Source</a>
       <a href="https://github.com/CevorLabs/TinyToolBox" target="_blank">Visit GitHub</a>
     </div>
   </div>
   <footer>
     <p>Created by <a href="https://github.com/CevorLabs" target="_blank">CevorLabs</a></p>
   </footer>
-
-  <script>
-    // Function to fetch all files in the same directory as the HTML file
-    async function fetchFiles() {
-      const response = await fetch('./');
-      const text = await response.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(text, 'text/html');
-      const links = doc.querySelectorAll('a');
-      const files = Array.from(links)
-        .map(link => link.href)
-        .filter(href => !href.endsWith('/') && !href.includes('index.html'));
-      return files;
-    }
-
-    // Function to create and download the ZIP file
-    async function createAndDownloadZip() {
-      const files = await fetchFiles();
-      const zip = new JSZip();
-
-      // Add each file to the ZIP
-      for (const file of files) {
-        const response = await fetch(file);
-        const blob = await response.blob();
-        zip.file(file.split('/').pop(), blob);
-      }
-
-      // Generate the ZIP file and trigger download
-      zip.generateAsync({ type: 'blob' }).then(content => {
-        saveAs(content, 'TTB_open_source.zip');
-      });
-    }
-
-    // Add event listener to the "Download Open Source" button
-    document.getElementById('download-open-source').addEventListener('click', (e) => {
-      e.preventDefault();
-      createAndDownloadZip();
-    });
-  </script>
 </body>
 </html>
